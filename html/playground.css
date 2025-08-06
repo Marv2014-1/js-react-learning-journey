@@ -17,3 +17,21 @@
     border-style: dotted;
     border-color: black;
 }
+
+.classHeader {
+    font-size: larger;
+    color: black;
+    background-color: bisque;
+}
+
+.classP {
+    margin: 1rem;
+}
+
+#firstId {
+    margin: 1rem;
+}
+
+#secondId {
+    padding-left: 1rem;
+}

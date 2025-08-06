@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <head>
+    <!-- Contains Metadata and imports css and javascript-->
     <title>HTML Basics</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="playground.css">
     <link rel="icon" type="image/png" href="images/icon.png"> <!-- favicon, does not work in safari-->
+    <!-- Makes the website responsive-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <h1>This is a header 1</h1>
 
-    <h2> The basics </h2>
+    <h2 id="top"> The basics </h2>
 
     <p>This is a peragraph <br> with a line break</p>
 
@@ -20,7 +24,7 @@
 
     <!-- an image seperated by horizontal lines -->
     <hr>
-    <img src="images/sunset.jpeg" alt="alt Text" width="100" height="200">
+    <img src="media/sunset.jpeg" alt="alt Text" width="50%" height="50%">
     <hr>
 
     <h2> Styles </h2>
@@ -51,7 +55,7 @@
     <p>Relative urls (web pages within this project)</p>
     <a href="index.html">html basics</a>
     <hr>
-    <a href="index.html"><img src="images/sunset.jpeg" alt="image as link"></a>
+    <a href="index.html"><img src="media/sunset.jpeg" alt="image as link"></a>
     <hr>
 
     <h2>Tables</h2>
@@ -76,16 +80,15 @@
     <br>
     
     <p> styled table</p>
-    <table class = "styledTable">
+    <table class = "styledTable" style="width: 50%;">
         <tr><!-- Table row -->
-            <th>row 1</th> <!-- table header -->
+            <th style="width: 50%;">row 1</th> <!-- table header -->
             <th>row 2</th>
             <th>row 3</th>
         </tr>
         <tr>
             <td>row 1 element 1</td> <!-- table data -->
-            <td>row 2 element 1</td>
-            <td>row 3 element 1</td>
+            <td colspan="2">row 2 element 1 across two columns</td>
         </tr>
         <tr>
             <td>row 1 element 2</td>
@@ -93,4 +96,124 @@
             <td>row 3 element 2</td>
         </tr>
     </table>
+
+    <h2>Lists</h2>
+    <ul style="list-style-type: circle;">
+        <li>unordered list 1</li>
+        <li>unordered list 2</li>
+    </ul>
+
+    <ol>
+        <li>ordered list 1</li>
+        <li>ordered list 2</li>
+    </ol>
+
+    <dl>
+        <dt>Description List</dt>
+        <dd>Description list item</dd>
+    </dl>
+
+    <h2> Block vs Inline Elements </h2>
+    <p>
+        Every HTML element has a default display value. <br><br>
+        A block-level element always starts on a new line, and the browsers automatically add some space (a margin) before and after the element.<br><br>
+        An inline element does not start on a new line. An inline element only takes up as much width as necessary.
+    </p>
+
+    <!-- Here are the block-level elements in HTML:
+        <address> <article> <aside> <blockquote> <canvas> <dd> <div> <dl> <dt> <fieldset> <figcaption> <figure> <footer> 
+        <form> <h1>-<h6> <header> <hr> <li> <main> <nav> <noscript> <ol> <p> <pre> <section> <table> <tfoot> <ul> <video> -->
+
+    <!--Here are the inline elements in HTML:
+
+        <a> <abbr> <acronym> <b> <bdo> <big> <br> <button> <cite> <code> <dfn> <em> <i> <img> <input> <kbd>
+        <label> <map> <object> <output> <q> <samp> <script> <select> <small> <span> <strong> <sub> <sup>
+        <textarea> <time> <tt> <var> -->
+
+    <div> 
+        <h3>Div</h3>
+        <p> For this reason (and since div is a block element and takes all avilable width), div is usally used as a container to hold a group of elements </p>
+    </div>
+
+    <h2 class="classHeader">Class</h2>
+    <p class="classP"> The class attribute is used to point to a class name in a stylesheet or by javascript to manipulate variables.</p>
+    <p class="classP"> Multiple elements can share the same class</p>
+
+    <h2 id="firstId">id</h2>
+    <p id="secondId">the id value is a unique id foran html element and can not be duplicated within the document</p>
+    <a href="#top"> jump to top</a>
+
+    <h2>Other</h2>
+    <p>a web page within a web page:</p>
+    <iframe src="./basics/index.html" title="index"></iframe>
+
+    <p id="content">Hello World</p>
+    <script>
+        document.getElementById("content").innerHTML = "javascript can change content";
+        document.getElementById("content").style.margin = "1rem";
+        document.getElementById("content").style.backgroundColor = "yellow";
+    </script>
+    <noscript> Users can choose to disable javascript and noscript will show alternative content</noscript>
+
+    <p> html offers a code tag to display code</p>
+    <code>
+        x = 5
+        y = 2
+    </code>
+
+    <p>
+        <br> keyboard input uses kbd such as <kbd>ctrl + s</kbd> <br>
+        program output uses samp such as <samp>Content not found</samp>
+    </p>
+
+    <h2>Forms</h2>
+    <!-- the action dictates the page and the target dictates wether a new tab or current tab should be oppend to perform the action-->
+    <form action="./basics/css-basics.html" target="_blank">
+        <div>
+            <label for="text">Enter text here</label>
+            <input type="text" id="text" name="input">
+        </div>
+
+        <div>
+            <input type="radio" id="first" name="radio" value="1">
+            <label for="first">Radio 1</label>
+            <input type="radio" id="second" name="radio" value="2">
+            <label for="second">Radio 2</label>
+        </div>
+        <div>
+            <input type="checkbox" id="option1" name="pick1" value="1">
+            <label for="ption1"> box 1</label>
+            <input type="checkbox" id="option2" name="pick1" value="2">
+            <label for="ption1"> box 2</label>
+        </div>
+
+        <div>
+            <label for"breakfast">Choose an option</label>
+            <Select id="breakfast" name="breakfast">
+                <option value="eggs">eggs</option>
+                <option value="bacon">bacon</option>
+                <option value="toast">toast</option>
+            </Select>
+        </div>
+
+        <div>
+            <input type="submit" value="submit">
+        </div>
+    </form>
+
+    <h2> media </h2>
+
+    <div>
+        <video width="400" height="300" controls>
+            <source src="./media/dice.mp4" type="video/mp4">
+            you can not see this video
+        </video>
+    </div>
+    <div>
+        <audio controls>
+            <source src="./media/static.wav" type="audio/wav">
+        </audio>
+    </div>
+
+    <a href="https://www.w3schools.com/html/html5_api_whatis.asp">Html APIS</a>
 </body>
